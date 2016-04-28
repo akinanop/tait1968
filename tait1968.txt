@@ -1,0 +1,1039 @@
+﻿________________
+2o6
+w
+The propositional formulae, or pf for short, are built up from atoms by means of the
+possibly infinitary operations
+V A. A A. 1 1 iel i~l
+of disjunction and conjunction, resp. Here I is a constructivm species, and for each i in I, A. i
+is a pf already obtained. The definition should be understood constructively: VA i is given by
+V, I and a function (i.e., rule) which associates the disjunct A i with each i in I. Similarly
+for conjunction. We could take the species of pf to be the species which is inductively defined by
+the above conditions. I leave open the question in this paper of the species I for which this
+inductive definition of the species of pf can be constructively justifed. In the particular
+applications discussed here, I is always of the form ~i:i ~ z), where z ~ ~; and in this case,
+the definition is no more problematical than Brouwer's definition of the second number class, since
+they are formally identical. However, it seems to me that undecidable species I can be introduced
+as well. But I will discuss this in another paper, in which such applications will be considered.
+In any case, for many applications, we want the pf to constitute, not the entire species which is
+inductively defined by the above conditions, but some subspecies of this. Such a subspecies is called
+complete if it contains each atom and, whenever it contains one of ~/A i and /~A i, it contains
+both of them and the components A. for each i c I. Of course, the inductivmly defined species is
+i
+itself complete.
+Henceforth, the pf will all be assumed to belong to some fixed complete species. To call A
+a pf will mean that it belongs to this species.
+Negation is not taken as a primitive operation, because for the purposes of this paper, it is
+more convenient to deal with it as follows: Assume that each atom p has associated with it an atom
+p, called its ~ ; and that conversely, p is the complement of p, i.e., p = p. The
+complement ~ of an arbitrary pf A is inductively defined by De Morgan's laws:
+VA i = AA i AA i = V~ i.
+The negation of A will be identified with ~, with the advantage for us here that the classical
+law of double negation becomes the syntactical identity ~ = A. Note that, by completeness, A is
+________________
+207
+a
+pf when A is.
+Quantification is not introduced as primitive, either. This is because, without any loss, it can
+be dealt with in terms of infinite disjunctions and conjunctions. We will take this point up below.
+In order to make the structure of derivations as simple as possible, the objects to be derived are
+taken to be finite sets P, A, etc., of pf, rather than single pf. These sets are interpreted
+disjunctively, so that [Ao,...,An_l] is valid just in case V A i is. P + A will denote the
+i<n
+union of P and &, P + A will denote P + [A]; and sometimes, A will denote [A}.
+Let S be a collection of finite sets of atoms with the
+INTERSECTION PROPERTY. If P + p and & + p are in S, then so is some subset of P + A.
+S will be called an axiom s~stem, and its elements axioms. For example, the axiom system might
+consist of all true propositional constants (including the complements of false ones) together with
+the sets p + p for each propositional variable p. But, it will be useful, e.g., in treating
+predicate logic with identity below, to consider the more general kind of axiom system.
+Relative to the choice of an axiom system, the normal rules of inference are the rule of axioms
+Y + A (if A is an axiom) ,
+the rule of disjunction
+F-~ A. V - ~ (some j in Z)
++ ~/A.
+1
+/~ -'+ A.
+r + /\A.
+!
+Besides these normal rules, there is the cut rule
+(all j in I) 9
+~ c
+r+A r+~
+F
+Rule A has no premises, V has one, C
+l~and so may have infinitely manypremises.
+has two, and
+The atoms in
+A has one corresponding to each j in
+& are called the principle terms (pt) of
+________________
+2o8
+A. ~/A i and /~A i are the pt of ~ and ~, resp. ~ has no pt. Aj is called the minor
+term (mt) of the premise of~; Aj is the mt of the premise r + Aj of~; and A and
+are the mt of the premises r + A and r +~ of ~, resp. Thus. let the pf Bj. for j in
+J, be the mt of some inference and A the set of pt. Then for each P,
+(*) r+---~n. all j in J)
+is an inference; and every inference is of this form.
+the mt B. J
+(j in J), the pt A and the set P
+(st) of the inference. Note that in every case but A
+pf occurring in all the premises and in the conclusion.
+P c A cP + A can be the set of st of an instance of
+A is an axiom).
+We will regard the inference (*) as given by
+whose elements will be called the side terms
+the st are determined by being the only
+In the case of A, any set /% such that
+A with conclusion p + A (providing that
+Derivations are given in (possibly infinite) tree form. Thus, if (*) is an inference, and Dj
+is a derivation of the premise r + B. S
+for each J in J, then
+D.
+P+A
+(all j in J)
+is a derivation of P + A. (*) is called the last inference of the derivation, and the Dj its
+direct subderivations. The instances of A are derivations, and all other derivations are built
+up from these using the remaining rules of inference. D ~ A will mean that D is a derivation of
+A, and ~ A will mean that there is a derivation of A.
+The species of derivations is thus inductively defined, relative to the species of pf. We
+have relativized the notion of pf from the full inductively defined species to some suitable
+(i.e. complete) subspecies. It is also possible to do this for the notion of a derivation. In this
+case, to see what a "suitable" subspecies would be, we would have to analyze the closure conditions
+on the notion of a derivation which suffice for the proof of the Elimination Theorem to go through.
+For a classical treatment of infinitary logic, this has recently been done by Barwise [i] : Both the
+pf and the derivations are relativized to some admissible set. (This includes the condition of
+completeness for the set of pf. ) But, so far, no constructively meaningful treatment of this
+problem has been given.
+________________
+2o9
+A derivation is called normal if it involves only normal inferences, i.e., if it contains no
+cuts. In a normal inference, every pf which occurs in a premise is a part, or subformula, of a
+pf in the conclusion. It follows from this, for example, that if a set of atoms has a normal
+derivation, then some subset of it must be an axiom. The Elimination Theorem states in part that
+every derivable set has a normal derivation. An immediate consequence is the
+CONSISTENCY THEOREM. Every derivable set of atoms includes an axiom.
+ConsistencY in the usual sense means that not every set is derivable. But by the Consistency Theorem,
+this is equivalent to the condition that the null set is not an axiom. The statement of the
+Consistency Theorem is not itself significant, of course. Nonconstructively, it is a triviality.
+The significance lies in the fact that it is proved constructively.
+~ . By a valuation, I will mean a set of atoms which contains at least one element
+of each axiom and at most one of p and p for each atom p. Each atom in a valuation will be
+called true for it. VA i ( /~A i) will be called true for a valuation if Aj is true for some (all)
+j in I. d is valid if, for each valuation, some pf in d is true. A pf is called countable
+if it contains only countable disjunctions and conjunctions.
+COMPLETENESS THEOREM. If a finite set of countable pf is valid, it has a normal derivation.
+I will omit the proof of this. (See Lopez-Escobar [7].) It is in complete analogy with the proof
+of completeness of the cut-free rules for predicate logic (which it implies). The main lemma needed
+is this :
+If M
+an axiom.
+is a (possibly infinite) set of atoms which intersects each valuation~ then it includes
+The Completeness Theorem is formulated in slightly greater generality than usual, because normally
+it is stated only for logically complete axiom systems, i .e., systems in which some subset of p +
+is an axiom for each atom p. For logically complete systems, a valuation contains exactly one of
+p and p for each atom p; and so, the definition of truth is the usual one for classical logic.
+We have not assumed logical completeness in the definition of an axiom system, simply because it is
+not needed for the Elimination Theorem. (It also turns out that the Intersection Property is exactly
+what is needed to prove the above lemma. )
+________________
+PI0
+The restriction to countable pf in the Completeness Theorem is known to be essential. (E.g.
+see Karp [61 .) A particularly simple proof of this is possible using the present formulation of
+infinitary logic. Let the atoms be p0,Pl,p2,.., 0 0 0 and their complements p0,Pl,P2, 1 1 1
+..., resp. The
+axioms are just the sets pO + pl for n _~ 0. (This is the weakest logically complete system.) If
+f ranges over the uncountable set 2 N of numerical functions with values < 2, then
+(+)
+V A p~(n) f n
+is valid. Suppose that it had a normal derivation D. Because of the subformula property of normal derivations, the only conjunctions occurring in D must be of the form A _e(n)
+p n where 0 is some
+function in 2 N. Hence, in every instance of rule A-and so, of any rulemthere are only a countable
+number of premises. It follows that D can contain only a countable number of pf. In particular,
+there are only a countable number of 0, say 00,01,..., such that an inference of the form
+F + Ap~ (n)
+F + VfA~n
+_f(n)
+occurs in D. Consequently, D would remain a correct derivation if f in (+) were restricted to
+range over 00,0 I, .... But, so modified, (+) is invalid. Therefore, there is no normal derivation
+of (+), and so, by the Elimination Theorem, no derivation at all.
+A similar argument demonstrates the (known) nonderivability of the axiom of choice
+V APmn
++
+V A Pug(n) m n g m
+where g ranges over N N and the axioms are Pmn +Pmn for each m and n. Again, the crucial
+point is that the conjunctions are all countable, while g cannot be restricted to a countable range.
+w 2. The strong form of the Elimination Theorem requires the introduction of a suitable con-
+structive system of ordinals to measure the complexity of pf and the length of derivations. In
+classical terms, let xO(x) = 2 x, let xZ(x), for z > O, be the x th simultaneous solution y of
+the equations xU(y) -- y for all u < z. It is well-known that xZ(x) exists for all countable
+ordinals x and z [i01. Let x = 2 x 0 , ... * 2 x
+m and y = 2Yo
++ ... + 2 yn
+", where x 0 > --. ~ x m
+________________
+211
+and Y0 ~ "'' ~ Yn' and let z 0 ~ z I ~ ... ~ Zm+ n be all the x i and yj (counting multiple
+z 0 occurrences). Then the natural sum x o y of x and y is defined by x o y = 2 + ... + 2 zm+n
+The natural sum is commutative and strictly increasing. Various authors, e.g., Schutte [lO], have
+given constructive systems of ordinals on which the functions xZ(x) and x o y are defined. We
+will assume that some such system has been chosen; and all discussion of ordinals should be referred
+to it.
+The relation A ~ u (A is of rank ~ u) is to measure the complexity of the pf A. It is
+inductively defined as follows: p ~ u for every atom p and every ordinal u. If for each i in
+I there is a u i ~ u with A i ~u i, then VA i ~ u and /kAk~U. For a given pf A, there need
+not be a u with A ~ u. This will depend on the choice of the system of ordinals and on the species
+I admitted in the construction of pf. Also, even if A 9 u, there need not be a least such u
+which we can effectively determine. For this reason, we cannot regard the rank of A itself as an
+ordinal. A 9 u will mean that A 9 for some x ( u. Thus, V A. 9 Just in case A. 9 for
+each i in I; and similarly for conjunction. It is clear that A and ~ have the same rank,
+i.e., that A 9 if and only if A 9 u.
+A derivation D is said to be of cut degree ~ u if A 9 u for every mt A of a cut
+7§163247
+in D. Thus, D is of cut degree 0 (i.e., ~ O) Just in case it is normal. The mt of cuts are
+usually called the cut formulae.
+The relation D 9 u (D is of rank ~ u) is inductively defined by the condition that, for
+every direct subderivation D' of D, D' 9 u (i.e., D' 9 u' for some u' (u). This gives a
+B
+measure of the length of a derivation. Instances of A are of rank 0 (i.e., < 0). As in the
+case of pf, a derivation needn't have a bound on its rank, or in any case, a least one.
+D ~ ~ [u,vB
+will mean that D is a derivation of A of rank < u and cut degree < v. We will write [u] for
+m
+[u,0] so that D ~ A [u] means that D is a normal derivation of A of rank < u.
+Let D + A denote the result of adding A to the st of each inference in the derivation D.
+________________
+212
+Then by a straightforward induction on u:
+WEAKENING LEMMA. If D ~ F [u,v], then D + A ~ F + A[u,v].
+A finite set 8 of pf is called a reduction of a pf A if 8 contains a mt of each
+inference of which A is a pt. There are three kinds of reduction: First, A is an atom which does
+not occur in any axiom, and 8 is arbitrary. Secondly, A is a finite disjunction, and 8 contains
+each disjunct. (Infinite disjunctions, i.e., with infinitely many distinct disJuncts, have no
+reductions.) Thirdly, A is a conSunction , and 8 contains at least one of the conJuncts.
+REDUCTION LEMMA. If 8 is a reduction of A and D ~ F + A [u,v], then 5 F + 8 [u,v].
+The proof is by induction on u. We can assume that A is not in F, since otherwise the result
+follows by weakening, taking D + 8. We can also assume that A is a st of the last inference of
+D, replacing D by D + A if necessary. So this inference has the form
+A+A+B.
+A+A+A
+(J in J)
+where F = A + ~, A+ A is the set of st, and either A or A + A is the set of pt. For each J
+in J there is a uj < u with ~ A + A + Bj [uS,v] ; and so by the induction hypothesis (ind. hyp.),
+A + e + Bj [Us,V]. If A is not a pt, then the result follows by the inference
+A+8+, Bj
+A+e§
+(S in J)
+If A is a pt, then B S is in 8 for some J, and so ~ A + @ [uS,v]. The result then follows
+by weakening, q.e.d.
+Recall that an axiom system is logically complete if some subset of p + p is an axiom for e&e~
+atom p. If we assume logical completeness, then the usual laws of classical logic can be derived.
+The crucial case is the
+LAW OF EXCLUDED MIDDLE. If the system is lo~ically complete and A~u, then ~ A + ~ [2"u].
+The proof is by induction on u. If A is an atom, then A + A is an instance of rule A. If A
+is not an atom, we can assume it is a disjunction ~/Ai, since otherwise A is a disjunction and
+________________
+a13
+= A =A. For each J in I there is a uj <u with Aj ~ uj
+Aj + Aj [2"uj]. By ~, ~ A + Aj [ 2"uj + i] for each J;
+2uj + i < 2.u. q.e.d.
+We turn now to the Elimination Theorem.
+following lemma.
+and so by the ind. hyp.,
+and so by ~, FA + A [2.u],
+since
+Most of the proof theory involved is contained in the
+ELIMINATION L~:~MA. Let D ~r + A [x,v] and D' ~ d + A [y,v], where A 9 v; and let
+u = x o y. Then F F + d [u,v].
+Of course, we obtain a derivation of F + A of cut degree < v + 1
+by an application of the cut
+rule; but the object of the lemma is to show that we needn't raise the cut degree.
+The proof is by induction on u. Since ~ = A, x o y = y o x, and A and
+rank, the lemma is symmetric with respect to the two given derivations.
+Case i. Either A is not a pt in the last inference of D or else A is not a pt in the
+last inference of D'. By sy~netry, we can assume the former. Then the last inference of D is of
+the form
+A+A+B~
+A+A+e
+have the same
+(j in J)
+with mt Bj, pt e and st A + A. F = A + @. For each J in J there is an xj with
+A + A + Bj[xj,v]. Since uj = xj o y <u, it follows by the ind. hyp. that ~ A + A + Bj[uj,v]
+each J. The result then follows by the inference
+for
+A+A+B~
+A+A+O
+(j in J)
+since the uj are < u and, if this inference is a cut, its mt must be of rank < v.
+Case 2. A is a pt of the last inference of D and A is a pt of the last inference of D'.
+Case 2a. A (and A) are atoms. Then the last (and only) inferences of D and D' are
+instances of rule A. It follows from the intersection Property that F + A is also an instance of A.
+________________
+~4
+Case 2b. A and A are not atoms. By symmetry, we can assume that A is a disjunction
+k/A i, and so A = /kA i. We can assume that A is a st of the last inference of D, replacing
+D by D + A if necessary. So that inference is of the form
+F+A+Aj
+F+A
+for some J in I, and ~P + A + Aj [z,v] for some z < x. Since z o y <u, it follows from
+the ind. hyp. that ~ F + & + Aj [z @ y,v]. Also, by the Reduction Lemm~, ~ & + Aj [y,v]. Since
+x >0, y < x e y = u; and z @ y < u. Also, A i 9 v, since A 9 v. So the result follows from the
+cut
+P +A +A~ F +A +A,I
+F+A
+q.e.d.
+Now we can prove the
+ELIMINATION THEOREM. If D ~ A [u,v + mz], then ~ A [XZ(u),v].
+In particular, taking v = 0,
+normal one by going from rank
+a derivation of A of cut degree <
+Z
+u to rank ~ xZ(u).
+can be transformed into a
+The proof is by induction on z, and within that, by induction on u. I.e., we assume the
+theorem for all ~ and ~ with (i) ~ < z and (ii) ~ = z .and ~ <u; and we prove it for
+Z and U.
+First, assume that the last inference of D is not a cut. Then it is of the form
+-A A
+(all J in J)
+where for each J there is a uj <u with F~j [uj,v + wz].
+and the result follows since xZ(uj) < xZ(u).
+So, we can assume that the last inference of D is a cut
+By the ind. hyp. (ii),
+~j EC(uj),vl;
+________________
+215
+A+A A+~
+A
+where for some x and y < u, ~ A + A [x,v + w z] and ~ & + A [y,v + z]. By the ind. hyp. (ii),
+F A + A [ • and F A + i [ •
+Case I. z = 0. Since D is of cut degree < v + ~ Z = v + i, A 9 v. So, by the Elimination
+Leamm, F A [• o • But X0(x) o X0(y) = 2 x ~ 2 y ~ 2 u = X0(u).
+Case 2. z > 0. Since A < v + w z, there is a w < z and a k such that A 9 v +w w- k. Hence,
+A [max(xZ(x),xZ(y)) + i, v + w w + .-. + ww], with k sl,mmands w w. Let w 0 : max(xZ(x),xZ(y)) + i,
+and for i < k, wi+ I = XW(wi). Since w 0 < xZ(u) and w < z, it is easy to prove by induction on
+i that w i < XZ(u). But, by iterating the ind. hyp. (i) k times, F A [Wk, V]; and so
+k ~ [• q.e.d.
+Set 20 = x and 2 x n+l = 22 n
+x Then writing n = w 0 + -'' + w 0
+,
+and applying the Elimination
+Theorem n times (with z = 0):
+COROLLARY. If ~ A [u,v + n], then F A [2U, v] .
+w 3. The induction Theorem is concerned with partial orderings mE n of the natural numbers.
+Actually, the restriction to natural numbers is not essential, m and n can be regarded as ranging
+over any species, but the applications here concern the natural numbers.
+Let men be fixed. The relation n 9 u (n is of rank < u) is inductively defined by the
+i
+condition.that, for every mC n there is a u m <u with m - 9 u m . n 9 u means that n --
+9 x for
+some x < u. Of course, even when the ordering m Cn is well-founded, n needn't have a rank u,
+i.e., with n 9 u. E.g., m C n could be a well-ordering of which the system of ordinals is a proper
+segment. When C coincides with the ordering < of the ordinals, then n ~ z is clearly equivalent
+to n < z. Under fairly general conditions~left for the reader to determinewm 9 z means that there
+is an ordinal valued function ~, defined for all m Cn, such that k CmCn implies
+~k (~m _<z.
+Suppose that we have specified a particular system of propositional logic (i.e., its complete
+species of pf and its axiom system). Assume that p0,Pl,...,p0,Pl,.., n
+are all distinct atoms,
+________________
+216
+and that, for each n, the only axiom containing either Pn or Pn is Pn + Pn" Let
+v n mCn
+e(n) = ~ + A Pm "
+mCn
+Thus, 8(n) expresses induction on C up to n for the "predicate variable" p.
+INDUCTION THEOR~M. If the null set is not an axiom and ~ e(n)[u] and u < xl(z),
+n 9 •
+then
+The results of Section 2 on propositional logic remain valid when we extend this system by adding the
+new rule of inference
+F+P m K. P + Pn (all men) .
+We have only to amend Case 2a in the proof of the Elimination Len~na, to cover the new possibillty:
+A = Pn' and A and A are pt in the last inferences of D and D', resp. (where the last
+inference of D is an instance of K). But the only inferences with pt Pn are the instances
+A + Pn +Pn of 4" Hence, A must contain Pn; and so by weakening, D + A ~ F + A Ix, v].
+In the extended system, the following is a normal derivation of D:
+~ + Pk (all k and n with kC n)
+V p_ + p~ (all k and n with kC n) mCn A~
+mCn
+V ~m +pn (all n, by K)
+mCn
+V PmVPn +pn (all n, by V)
+mCn
+v YmVPn (all n, v)
+________________
+217
+Suppose now that ~ e(n)[u] in the original system of propositional logic, and that
+u < xl(z). Since ~ D [5] in the extended system and D <_ 3, we have ~ A Pm [max(5,u) + 1,4]
+mCn
+in the extended system by applyi~ rule C with mt D and D. So, by the Elimination Theorem for the
+extended system, ~ A p. [v], where v = k2~ ax(5'u)+l. But if u < xl(z), then v < xl(z). So,
+mCn
+by reduction, ~ Pm [v] in the extended system, for all m C n.
+In a normal derivation of Pm' only the rule K can be used, because of the sub-formula
+property (since the null set is not an axiom). But if only K is involved (and more generally,
+providing instances A + Pm + Pm of A are not involved), then Pk is a reduction of Pm for all
+k Cm. It easily follows from this that if ~ Pm [x] then there is a derivation of Pm of rank
+< x using only instances of K of the form
+-- Ph
+(all h c k) Pk
+i.e., without st.. By induction on x,
+F- Pm Ix] implies m <__ x .
+Assume that this holds for all x < y, and that ~ Pm [y]" Then for each k Cm there is an x k < y
+with ~ Pk [Xkl" By the ind. hyp. then, k ~ x k for each k Cm. Hence, m ~ y.
+We have ~Pm Iv] for each mC n; and so, m ~ v < xl(z). Hence, n ~ v + i <xl(z). q.e.d.
+Let m ~ n be an atom for each m and n. Let m ~ n be an axiom if mC n, and let
+m ~ n be an axiom if m ~ n. Induction on C is usually encountered in the form
+e'(n) = V(A k m (m ~kV pm) A pk) + A
+m
+(m ~ n V pm ) .
+But it is easy to see that if ~ e'(n) [u] with u < xl(z), then ~ e(n) [v] for some
+Simply notice that each inference of the form
+v < xl(z).
+r*m<Invp m
+r + A
+(all m) (m4nVp m) m
+________________
+218
+can be transformed into
+r +mqn +pm r +m<n +p m
+(all
+men)
+r +Pm (al_AZ, m C n)
+r+ A Pro'
+mCn
+where the left-hand upper premise is obtained by reduction and the right-hand upper premise is an
+instance of ~ (since m ~n is an axiom when mCn)).
+w It remains to be seen how the Elimination Theorem applies when quantifiers are added to the
+system. In this case, the atoms are of the form Ps I ... s n (n ~0), where P is a predicate symbol
+of n arguments and Sl,...,s n are terms built up in the usual way from free variables a, b, etc.,
+and function symbols (including individual constants). Each predicate symbol P has a complement
+~, with P = P; and the complement Ps I ..- s n of an atom is defined to be ~Sl,...,s n. Besides
+disjunction and conjunction, formulae may be built up using existential and universal quantification
+V~(x) A~(x)
+where x is a bound variable (notationally distinct from free variables) and A(x) results from
+replacing a free variable b by x in a formula A(b) which does not contain x. The formulae
+obtained in this way, and which contain only a finite number of free variables, will be called
+quantificational formulae, or qf. Complementation is extended to qf by
+V~(x) = A xA(x) A~(x) =V~-'('~',
+and the rank relation by: If
+we have fixed a complete species of
+condition: If one of V xA(x) and
+A(s) where s is a term.
+A(b) 9 u, then k/xA(x) ~ u and /kxA(x) ~ u. Again, we asst~me that
+qf, where in the definition of completeness, we must add the
+A xA(x) is in the species, then so are both of them and each
+An axiom system in quantification theory is a collection of finite sets of atoms with the
+Intersection Property and the
+________________
+219
+SUBSTITUTION PROPERTY. If ~(b) is an axiom, then for each term s, some subset of ~(s) is
+an axiom.
+A(s) is, of course, the result of replacing b by the term s in each qf in A(b). The additional
+normal rules of inference for this system are the rule of existential quantification
+F + A(s) (some term s) r + V xA(x)
+and the rule of universal quantification
+v r r + + A
+A(b) (b not in F) .
+Since the axioms are closed under substitutions, it is easy to see that ~ A(b) [u,v] implies
+A(s) [u,v] for all terms s. In particular, if b is not in F, then F F + A(b) [u,v] implies
+F + A(s) [u,v] for all s. This shows that the rule V can be interchanged with the infinitary
+rule
+V' ~ r r +
++ A A(S)
+xA(x)
+(all terms
+s)
+without affecting the rank or cut degree of the derivation. (V is obtained from V' by choosing
+s to be a variable which is not free in F + A(x). Since there are only a finite number of free
+variables in these q.f., there will always be such an s.)
+Let to,tl,... , be an enumeration of all the terms. Each qf can be regarded as a pf by
+identifying
+V xA(x) = V n A(tn), A xA(x) = i n
+A(tn) .
+It is evident that the relation A 9 u is independent of whether A is regarded as a qf or as a
+pf. Moreover, if we regard qf as pf, then they form a complete species of pf, and the rules 3
+and V' are simply special cases of V and ~A' resp. It therefore follows that
+________________
+220
+A [u,v] holds in quantificational lo~ic (using the rules
+in propositional logic (regarding A as a set of pf).
+3
+andV)
+just in case it holds
+The Elimination Theorem thus holds for quantificational logic, too. This includes quantiflcational
+logic with identity, since we obtain the theory of identity by including the sets s = s and
+s = t + ~ + A(t) Among the axioms for all terms s and t, and all atoms A(b).
+A finitar~ qf is one which contains only binary disjunctions and conjunctions, A V B and
+A A B, resp. Finitar~ predicate logic refers to the systems obtained by restricting the rules of
+inference to finitary qf (which form a complete species). All finitary qf have finite rank, and
+all derivations in finitary predicate logic have finite rank, and so, have finite cut degree.
+GENTZEN'S HAUPTSATZ. If ~ & [m,n] in a system of finitary predicate logic, the~ ~ A [<]. ~
+Gentzen proved this for pure logic, i.e., when the axioms are all of the form Ps I 9 "" Sn + ~s I ... s n
+.
+Now, consider qf which contain no free individual variables, whose function symbols are
+computable function constants (including the numerals ~,[,...), and whose predicate symbols are
+decidable predicate constants and predicate variables. These qf will be called numerical for~alae
+(nf). Each term of this system has a unique numerical value (on the intended interpretation) which
+we can compute. Besides the Intersection Property, we assume that the axiom system satisfies the
+condition that, if n is the value of the term s, then for every axiom A(s), some subset of
+A(n) is an axiom. (A(s) and A([) are obtained from A(b) by replacing all occurrences of b by
+s and n n, resp.) Number Theor~ is the system whose formulae are the nf and whose rules of
+inference are those of propositional logic, 3, and for universal quantifiers, the w-rule
+N. ~ F
++
+A~.,':~ (all n) r + A xA(x)
+It is evident that if n is the value of the term s and ~ A(s) [u,v], then F A(~)
+the rule 3 can be replaced by its special case
+.
+[u, v]. Thus,
+3' F + A(~) (some n)
+r + V xA(x)
+without increasing the rank or cut degree of the derivation involved. If we identify
+________________
+221
+V xA(x) = V A(~), A xA(x) = A A(~)
+n n
+then every nf can be regarded as a pf
+and N are special cases of ~ and /~,
+independent of whether we regard them as
+theory, too.
+of the same rank. Moreover, under this identification, 3 '
+resp. Hence, the truth of ~ A [u, vS for nf A is
+nf or as pf. So, the Elimination Theorem holds for number
+Peano arithmetic is a system of finitary predicate logic with the rule
++ A(:) r + A(b) + A(b')
+r + A(s)
+of mathematical induction added to the rules of inference (where b is not free in s (The
+numerals are 0,1 = 0', etc.) The axioms are the axioms of identity mentioned above,
+0 = s', s' = t' + s = t and certain atoms which express defining equations for recursive functions.
+Suppose that A consists of formulae without quantifiers, and that there is a normal derivation of
+A in Peano arithmetic. Then it is clear that no quantifiers occur in the derivation. I.e., A is
+derivable in quantifier-free Peano arithmetic. Now, the consistency of quantifier-free Peano arithmetic
+is expressed by a quantifier-free formula (with a free variable), and is derivable in Peano arithmetic.
+Therefore, the cut rule C is not redundant in Peano arithmetic. However, Schutte [6] has observed
+that the rule of mathematical induction can be eliminated in favor of the ~-rule N, using the
+schema
+F + A(:) F + A(:) + A(:)
+r + A(:) r + A(I) + A(:)
+r + A(:)
+etc., applying the rule C with cut formulae A(~).
+Since the derivation in Peano arithmetic is of finite rank and of finite cut degree, it transforms
+into a derivation of rank < w 2 and finite cut degree in number theory. So the theorems of Peano
+2 arithmetic all have normal derivations of rank < 2 w k < ~0( =
+• for some k. So, ~0 is a bound
+________________
+222
+on the provable ordinals of Peano arithmetic. It is the least such bound, by Gentzen [5], in fact.
+Schutte [9] notes more generally that if mathematical induction is replaced in Peano arithmetic by
+induction on some decidable partial ordering C of rank m
+< z:
+F + A y(yCb V A(y)) V A(b)
+F
++
+A(t)
+then each derivation is transformed into one in number theory of finite cut degree and rank
+Hence, the bound on the provable ordinals in this case is the least xl(u) > z.
+< Z ~
+Suppose that we add to Peano arithmetic the above rule of induction on C for some standard
+well-orderin~ of the natural numbers of type 2 w+l for each k > 0 It seems possible that the cut
+-k -- 9
+rule is redundant in this system; but I do not know a proof of this 9
+w Ramified systems can also be treated in the framework of infinitary propositional logic 9
+Instead of ramified type theory, however, I will discuss ramified (or constructible) set theory, which
+is notationally simpler. But an analogous account of ramified type theory and ramified analysis can
+be given.
+For each ordinal z, terms and formulae of level z, called z-terms and z-formulae, resp., are
+built up as follows: Each free z-variable a z, b z, etc., and z-constant is a z-term. If P is a
+predicate symbol of n arguments, s i is a zi-term for i = l,...,n, and z = max(zl,...,Zn), then
+Ps l,...,s n is a z-formula. If A and B are u- and v-formulae, rasp 9 and z = max(u,v), then
+A v B and A A B are z-formulae. If A(b V) is a u-formula which does not contain the bound
+v-variable x V, and z = max(u,v + i), then V xA(x) and A xA(x) are z-formulae and XxA(x) is
+a z-term. (I am following the practice of dropping the level superscript on variables once the level
+has been established, or when the level is irrelevant. ) Complementation is defined as usual, with
+Ps l,...,s n = Ps l,. 9 n and P = P. The binary predicate symbol E will play a special role, and we
+will write set for s The atoms are the formulae PSl,...,Sn, except when P is e or ~.
+s at or s~t is an atom only when t is a variable or constant, i.e., when it is not of the form ~,xA(x)..
+The axiom system is to be a collection of finite sets o~ atoms with the Intersection Property
+and the Substitution Property, i.e., if &(b z) is an axiom and s is a term of level < z, then
+some subset of A(s) is an axiom. The rules of inference are A, V and /k (restricted to
+________________
+223
+binary disjunctions and conjunctions, of course), ~, the rules of quantification
+3 z
+r + A(s) r + V xZA(x z)
+(s is a term of level < z)
+-
+P + A(s) (all s of level < z) P + A xZA(x z)
+and the rules of abstraction
+% r + A(s)
+(s of level < z) F + s e %xZA(x z)
+and
+r
++
+~(s)
+(s is of level ~ r + s ~ AxZA(x z)
+< z)
+The intended interpretation of the terms is this: The objects of level 0 are individuals.
+The x + 1 objects are attributes of objects of levels ~ x. If z is a limit ordinal, the z
+objects are precisely the objects of level < z. In keeping with this interpetation, we should consider
+only terms and formulae which contain no free variables or constants of limit levels. Also, instead
+of considering an arbitrary domain of individuals, we could take the 0 objects to be the natural
+numbers. In this case, as in number theory, we would consider only terms and formulae without free
+O-variables. However, for those levels z (e.g., z = x + l) for which the terms and formulae contain
+free z-variables, the rule V z can be interchanged with
+F + A(b z) (b not in F) r +
+A xZA(x z)
+without affecting the ranks of the derivations involvedDas in the case of quantificational logic.
+The z-degree A* of a formula A is defined for each ordinal z as follows: If A is of
+level < z, then A* = 0. Assume now that A is of level > z. If A is an atom, then A* = 0.
+If A is B V C or B ^ C, then A* = max(B*,C*) + i. If A is s e )~B(x), s ~ P~xB(x),
+V xB(x) or /kxB(x), then A* = B(b)* + i. It is easy to show that:
+________________
+224
+If A(b x) is of level z, z' < z, and s is of level < z', then A(s)* = A(b)*.
+To each z-formula A we assign a pf A' of rank <~. z + A*, as follows: If z = 0, then
+A' = A. Assume that z > 0 and that B' is defined for all B of level < z and for all
+z-formulae B of z-degree < k. Let A be a z-formulae of z-degree k. If A is an atom, then
+~X z! - Z!~ A' = A. If A is s e B(x ) (where z' < z), then A is B(s)' or the empty disjunction
+l, (i.e. k/ A i with I empty), depending on whether s is of level ~ z' or not. In either
+i e I
+case, A' is defined, since if s is of level < z', then B(s)* = B(b)* < k. If A is
+m
+Z I Z ! S ~ kX B(x ), then A' is B(s)' or I , depending on whether s is of level ~ z' or not. If
+! Z v A = B V C then A' = B' V C', and if A = B A C then A' = B' A C'. Let A be k/x z B(x ), and
+Z ! Z ! Z t I let t O ,t I ,... be an enumeration of all terms of level ~ z'. Then A' is k/ B(t n ) . Since
+n
+each B(t ) is of z-degree < k, B(t ) 9 w 9 z + i. Hence, A' ~w 9 z + k. If A is
+! Z ! ~! A x z B(x ), then A' is A n B(t ) . It is clear that the species of A', for A a formula of
+ramified set theory, is complete.
+Let &' denote the set of A' with A in A. Under this translation, 3z and V z become
+special cases of ~ and A, resp., and k and ~~ become redundant, since the premise and
+conclusion translate into the same set. Thus:
+Ey. ery derivation of rank _< u of A in ramified set theor~ which involves only formulae of
+level < z, transforms into a derivation of A, in propositional logic of rank _< and cut degree
+<•'Z.
+It immediately follows that the provable ordinals of ramified set theory of level _< w z, using
+derivations of rank _< u, are all of rank _< • (Cf Schutte [13] for the analogous result
+for ramified type theory. ) Of course, we have not proved an elimination theorem for ramified set
+theory, itself; but it would not he difficult to do so, by showing that ~ A, [u, vl in propositional
+logic implies that there is a derivation of A is ramified set theory of rank ( 2 9 u involving
+m
+only formulae of level < z.
+w In the remainder of this paper, I will discuss certain subsystems of classical analysis
+(i.e. second order number theory).
+________________
+225
+The analytic formulae (af) are built up from atoms Rs I --. an, where R is a predicate
+constant or, if n = l, a free predicate variable and Sl,...,s n are constant terms of number theory,
+by means of countable disjunctions and conjunctions and the quantifications
+VZA(Z) AZA(Z)
+over predicates of one argument. A(Z) is obtained from an af A(P) which does not contain I Z by
+replacing each part Ps or ~s by Zs or Zs, resp. P will always denote a prepredicate variable.
+Bound variables -- X,Y,Z,Xl, etc. -- are distinct from free ones. We will require of an af that
+it contain only a finite number of free variables. The complement ~ of an af A and the rank
+relation A ~ z are defined in the usual way.
+The definition of an af is an extension of the usual one, which refers to finitar~ af. In
+these, the onS~v infinite disjunctions and conjunctions are the numerical quantifications V A(~)
+n
+and A n
+A(~); and so, finitary af are always of finite rank.
+A predicate F = F(b) is obtained from an af which contains no quantifiers by replacing zero
+or more constant terms by the individual variable b. A(F1,...,F )
+denotes the result of replacing
+P.s l and P.s l in A(P1,.. "'Pn ) by Fi( s) and Fi(s)
+for
+i = 1,...,n. If F. < z for i = 1,...,n
+I --
+and A(P1,...,Pn) ~ v, then A(FI,...,Fn) ~ z + v.
+The axiom system is logically complete and contains the axioms for = : s = t and A(s) + A(t)
+if s and t are equal numerical terms (i.e., denote the same number), and s = t if s and t
+are unequal. The only axioms containing the variable P are to be the sets Ps + Pt when s and
+are equal. The rules of inference for elementar~ analysis are those of propositional logic and the
+quantification rules
+r + A(F)
+r + V ZA(Z)
+V
+r + A(P) r
++ A
+~(z)
+where the variable P does not occur in the formulae in F or in
+predicate and variable of ~uantification in 3 and V, resp.
+A(Z). F and P are called the
+________________
+226
+Let S denote the list F0,FI,... of predicates F n = Fn(b ). S is of rank < z, written
+S 9 z, if F 9 z for all n. S is closed if it contains all the atomic predicates (i.e. containing
+-- n --
+no logical constants) and if, whenever G(P) is in the list S, then so is G(Fn) for each n.
+Suppose that S is not closed. Let S 1 be an enumeration of S together with all the atomic
+predicates; and let Sk+ 1 (for k > 0) be an enumeration of S k together with all predicates
+G(G1,...,Gn) where G(P1,...,Pn) is in S1, P1,...,Pn are variables, and G1,...,G n are in S k.
+Let S' be an inumeration of U S k. Then S' is closed, and is called the closure of S. If
+k
+S _ 9 z, then clearly, S k_ 9 z.k; and so S' _ 9 z.w.
+Let S be a closed list of predicates. A species of af is called S-complete if it contains
+all the atoms, if it contains A whenever it contains A, if it contains each A whenever it
+n
+contains VAn, and if it contains A(Fn) whenever it contains V ZA(Z). (S) will denote a
+system of elementary analysis whose af constitute an S-complete species and in which the predicates
+of quantification in instances of 3 are restricted to predicates in S.
+To each af A of (S) we assign a pf A(S) = A' by: A' = A if A is atomic. (VAn)' =
+VA'n, (VZA(Z))' = V n
+A(Fn)', and (i)' = A'. Then the A', for A an af of (S), forma
+complete species of pf. If S ~_ z ~nd A(P1,...,Pk) ~ u, then A(Fil,...,Fik )' ~ z + u. Let
+S 9 Z.
+I. If ~ A(P1,...,Pn) [u,v] in (S), then ~ A(Fil,...,Fin )' [2. z + u, z 9 v]
+lo~ic~ where z ~ 0 = 0 and for v > O, z ~v = z + v.
+in propositional
+Let & = A(P1, .. .,Pn) and A + = &(Fil ,...,F i ). The proof is by induction on u. If A is an
+n
+instance of A, then either A + is an instance of A or else it includes a set Fij(s) + Fij(t )
+where s and t are equal terms (and ~js + Pit is in A). But Fij(s ) + Fij(t ) has a normal
+derivation of rank 2 9 z, since S is of rank < z. (This is the law of excluded middle, when
+s = t. The proof is exactly the same when s and t are equal terms.) If the last inference in
+the derivation of A is an instance of V or /k, there is no difficulty, since these inferences
+are preserved under the translation of A into A +. A cut with cut formula B is transformed into
+a cut with cut formula B +. Since B < v, we have B + 9 z + v. The inference
+F + A(F) r
+§ V
+ZA(Z)
+________________
+227
+transforms into
+r + + A(F+) +
+F + + V A(Fn )+
+n
+which is valid, since F + is in the closed list S if F is. Finally, let the last inference be
+F + A(P l, ...,Pn, P)
+F + A ZA(PI,...,Pn, Z)
+By the induction hypothesis ~ F + + A(Fkl ,...,F i ,Fk)+ [2" z + u', z ~ v]
+n
+So, ~ F + + /kk A(Fil' '' "Fin 'Fk)+ [2 9 z + u,z ~ v]. q.e.d.
+for all k, where u' <u.
+If. If k a'[u,v]
+A[U,V] in (S).
+in the s[stem of propositional lo~ic which is associated with (S), then
+The proof is by induction on u, and is Just like the proof in the case of predicate logic.
+From I and II we ~ediately obtain the
+ELIMINATION THEOREM FOR ELEMENTARY ANALYSIS. If S <_ z, z ~ v _< x + w x 0 + ..- + w x n
+and A[u,v] in (St, then 5 A[x x 0 (... X x n
+(2z + ut...t,x] i__nn (S t.
+For example, let S consist of the atomic predicates (i.e. containing no logical constants t .
+Then S <_ 0; and so 5 A[u,v + w x] in (S) implies 5 A[xX(u),v] in (S). Pure second order
+Peano arithmetic refers to the formal system obtained by adding predicate quantifiers to Peano
+arithmetic with the rules 3 and ~, but with the predicates of quantification restricted to atomic
+predicates. (Of course, the rule of mathematical induction is to apply to arbitrary formulae of this
+system, and not Just those of Peano arithmetic. ) By the above result, E 0 is still the bound on the
+provable ordinals of this system. Kreisel has pointed out that this bound remains the same even if we
+add arbitrary true axioms of the from V ZA(Z) to the system, where A(P) contains no predicate
+quantifiers--although the proof of this is nonconstructive: Since V ZA(Z) is true, we can introduce
+a solution R with true axioms P~ or ~ for each n, so that there is a normal derivation of
+A(R), and so of V ZA(Z), of finite rank. So (nonconstructivity), every derivation of the extended
+________________
+228
+system still transforms into a normal derivation of rank < e0" This remains so if we add arbitrary true Z1 1
+formulae (i.e. all of whose predicate quantiflers are existential) as axioms by the same argument.
+w Hyperarithmetical analysis. An af is called E I ( ) if all of its quantifiers are
+existential (universal).
+Let Q be a list G0,GI,... of predicates such that some finite set of variables contains all
+the variables in any of the G n. Then A(~) is an af for each af A. ~ S means that each G i
+is an F..
+J
+in
+LEMMA. Let S be closed and @ ~ ~. If A is
+8/%d
+then ~A +A(~) [2"u]
+Let A' = A(~). If A is atomic, then A +A' is an instance of A. If A = V A i and
+A i + A~[2 -u] where A! I 9 -- u. i < u, then ~ A + A! I
+[2.u i + 1] by k/, and so ~ A + A' [2"u]
+/k . Similarly for A = /kA i. Let A = V ZB(Z), so that A' = V B(Gn)'. If
+n
+B(Gn) + B(Gn)'[2"Un], where B(Gn)' ~ Un<U, then 5 A + B(Gn)'[2 .u n + l] by ~3 (with the
+predicate of quantification G n in S), and so 5 A + A'[2 9 u] by ~. q.e.d.
+Hyperarithmetical anal~sis refers to a system (S) with the added 4 comprehension rule:
+:f A(:) is and B(:) is then
+A(~)
+U, (~).
+by
+Al~l CR. A(~) + B(:) A(n--) + B(:) (all n)
+v z A (zW~-~A(E))
+n
+Here, A ~-*B is an abbreviation for A V B.A.A V B. Let A(~) and B(~) be E I and , resp.,
+and let them both be of rank _< x. Suppose that 3 A(n) + B(n)[u,v] and ~ A(~) + B(n)[u,v], for
+all n, in (S)~ where S is a closed list of predicates of rank < z. Let C' = C(S). By I,
+A(:)' + B(:)'[2. z + u, z ~ v] ,
+in propositional logi c. A(~)' and B(H)' are not generally af, however, since they may contain
+infinitely many variables. But, let P1,...,Pk be all the variables in A(~) and B(~), and let Q
+be a fixed predicate constant of one argument. Let G n
+be the result of replacing each variable
+P ~ P1,...,Pk in F n by Q, and let ~ be the list G0,G l, .... Set C* = C(~). Then C* is an
+af when C is. We obtain
+________________
+229
+F A(~)* +
+B(~)*
+[2"z + u, z ~ v]
+from the given derivation of A(~)' + B(~)' by replacing each variable # PI,...,Pk in it by Q.
+Since B(~) is ~l' the Lemmayields
+k B(E) + B(:)* [2 9 (z + x)]
+So by rule C,
+F A(~)* + B(~) [~,~] ,
+where
+B(~)*
+= max(2z + u, 2 9 (z + x)) + i and ~ = max(z 9 v, z + x + i), since the cut formula is
+which is of rank < z + x. Hence, using the second of the original assumptions,
+I- A(~)* + A(~) [~ + 1,V] ,
+by C with cut formula B(n). But, again by the Leu~a,
+A(:) + A(:)* [2(z + x)] .
+So, by applications of ~ and ~,
+A(~)* +-* A(~) [u + ~,vl
+!.e.~
+A (A(E)*~-*A(E)) [~ + 5,:]
+n
+in (S). Of course, the predicate A(b)* is not generally in the list S; but let ~'
+list generated by A(b)*,Fo,FI, .... Since each of these latter predicates is of rank
+z + x, S' ~ (z + x). ~. In (S'), we can then apply 3 to obtain
+be the closed
+________________
+23O
+VZ /k (Z~ +-~A(n)) [u + 6,v] .
+n
+EXAMPLE. Let M be the system obtained from pure second order Peano arithmetic by adding the
+rule: If A(b) and B(b) are ~ and ~l' resp., then (*)
+r + VZ Ax(Zx +-cA(x))
+is the union of a hierarchy (~) of systems, k _> 0, where ~ does not contain the rule
+(*), and, for each instance of (*) in a derivation in ~+l, the subderivations of the premises
+A(b) + ~ and ~ + B(b) are derivations in ~. The formulae of ~ can be regarded as finitary
+af by reading k/x ~nd i x as disjunction and conjunction, resp. Let S0 be a list of all atomic
+predicates, and let sk+l be a closed list generated by sk and all the predicates A(~) when ~ is
+obtained by replacing all but a finite number of predicate variables in the predicate is sk by the
+fixed constant Q and A = A(b) is a finitary ~ af. Thus, sk <_ k. Let S' be an enumeration
+of the union of the sk(k > 0). So S' is closed and of rank _< ~. Let @(0) = 2 and
+~(k + l) = k + @(k), and let %(0) = ~ and ~(k + l) = k + $(k).
+I._f.f ~A in ~, then ~A [u,v] i__nn (~k) for some u <@(k) an_~d v <#(k). So, ~A i._nm
+implies 5 A [u,v] i__nn (~) for some u and v < ~.
+For k = 0, this is clear, since ~0 is pure second order Peano arithmetic. Assume that it is true
+for k. Each derivation of A in ~+i yields
+in (~0) with
+~a
++ AX A VZ (Z~ +-~Ai(X,m,n)):
+i = l,...,p} [u,v] m n
+u < 2 and v < ~, and
+Ai(P,m~,~ ) + Bi(P,m~,E ) [u'v' ]
+F- Ai~,~,~ ) + Bi~,~,n ) [u',v' ]
+in (~k), where u' < Cp(k)
+of predicate variables, X
+and v' <#(k), for all i = l,...,p and all m and n. P is a llst
+a corresponding llst of bound variables, m is a list of numbers, and A. l
+________________
+231
+and B i are finitary ~ af. But, by the analysis of ~ ~ above, this yields
+I-- A x A m V z A n
+(z~ +-, Ai(X,~,n)) [x,y]
+in (sk+l), where x <max(2-m k + qg(k), 2(~ k +m)) and y <max(~ k~ #(k), k + r + 1). I.e.,
+x < k + ~P(k) and y < k + #(k). So, by p cuts in (sk+l),
+A [Ul, V l]
+with u I < $(k + i) and v I < ~(k + i).
+So ~ A in ~ yields a normal derivation in (S k) of A with rank ~ xk( ... XI(2~) ...) for
+some r < m and u <w k + ... + m I + m 2. For example, xl(• = ee0 is a bound on the provable
+ordinals of ~ and XW(0) is a bound on the provable ordinals of ~. I do not know whether or not
+these bounds are optimal.
+In his analysis in [2] of predicative proof, Feferman considers the hierarchy
+of fo= l
+systems where d ranges over the primitive recursive ordinal notations (i.e., @
+relativized to the
+primitive recursive functions). ~ = ~ "5 e is the union of the ~[e](n) (n~0), where
+[e ] is the primitive recursive function with G~del 3
+number e (or is the constant function = 0 if
+e is not
+such a C~del number), and ~2d is obtained by adding to ~d the formalized m-rule for ~d:
+AxVYPd(y, "Ax ( ) "I ) -~ AxA(x)
+Pd is the primitive recursive proof predicate for Md' rA(n)~ is the Godel number of A(~), and
+/k xA(x) is a closed formula. If d is a primitive recursive ordinal notation, the relation
+(d is of rank _< z in the partial ordering of the notations) is defined as in Section 3.
+d 9
+If d 9 z, then there is an Sz of rank < m 0J'Z
+such that ~ A in ~d implies ~ A [u,v] i__nn
+.-(~Z ) for some u and v < m
+W-Z
+The proof is by induction on d. If d = i, then z > I, and we have already proved this case. If
+d = 3 9 5 e, then for each w.z
+n there is a z n with [e](n) 9 z n
+< z. By the ihduction hypothesis, we
+have S'e]'n'L t # <- m n which satisfies the assertion for ~'e]'n"L t ) Let S d enumerate the closure of
+________________
+the union of the ~[e](n)" This will clearly have rank _< ~.z. Assume the assertion holds for ~d"
+We will prove it for d" d is ~2d with no instances of (*). A derivation in 2d contains an
+instance of (*) only when the subderivations of the premises are derivations in ~2d. Every derivation
+in ~2d of A transforms into a derivation of some ~ = A + [ /kx My Pd(Y,~Ai(~) ~ A VxAi(x):
+i : l,...,p} in ~d" So, 5 F [u,v] in (~x) , where d < x < z and u and v are < ~.x. When
+Pd(m,~Ai(n) ") is false, its complement is an axiom; and when it is true, we obtain from m a proof
+of Ai(n) in ~d" So, in any case, ~ Pd(m,~Ai(~) ") + Ai(~ ) in ~d' for each m and n. So
+b AxVy Pd(y,rAi(~) ") VAxAi(x)[m m'x + 4,m m'x]
+in (~x). So, by p cuts, ~A (u',v'] in (~x) with u' and v' < ~-x+ ~. Set sO = ~x' and
+let ~k+l enumerate the closure of ~k and the predicates A(~), where A = A(b) is a finitary Y i l af. So, ~ ~ ~'x 9 k. Set (P(0) = ~ ~.x + ~, and ~(k + i) = ~ ~ -x "~ k
++ (P(k). We have already
+shown that ~A in ~2d implies ~A [u,v] in (~) for some u and v < ~(0). Assume that FA
+in ~2d implies ~ A [u,v] in (~) for some u and v < q~(k). Exactly as in the case of ~ (in
+place of d ) above, it follows that ~ A in 2d implies ~ A [u,v] in (~+l) with u and
+v < ~.x. k + ~(k) = q~(k + 1), since ~k < ~.x.k. Let ~2d enumerate the union of the ~k ~d
+is closed and is of rank < m,.x . ~ _< ~.z. Also, each derivation of d in ~2d is a derivation in
+some
+~d
+' and so yields FA [u,v] in (S 2
+d) with u and v < ,-z
+Thus, • 9 2)) is a bound on the provable ordinals of ~d when d < z.
+w The Z i
+I axiom of choice. Let (a,b) denote some standard computable bijection of N • N onto N whose inverse is c *C(c)0,CC)l).__ - . _ _ pns is an abbreviation for P~,s). The ~i i
+axiom of
+choice is
+AVZA(~,Z) n ~k/ZAA(~,zn),
+n
+where A(b,P) is a predicate (i.e. containing no quantifiers).
+we can derive the corresponding implications for arbitrary E 1 i
+the ~i i
+axiom of choice is the rule
+It is called El I
+because, using it,
+af A(b,P). An equivalent form of
+________________
+233
+z 1 I
+r + AVZA(n,Z) A~
+n r +VZAA(~,Z n)
+n
+where A(b,P) is restricted to predicates. Using this rule, it is easy to derive the A1 i compre- hension axiom
+A(A(~) (--,B(~)) ~VZA(Z~ +-,A(~)),
+n
+where A(b) and B(b) are ~i" i In particular, Al i C RR is derivable using ~i I
+A~C.
+~(S) will denote the system (S) of elementary analysis with the rule 21 1
+A~C added, but with
+the restriction that A(b,P) be in the list S of predicates. I will show that, if A is ~i i
+(i.e. contains only Z 1 1 af) and ~ A [u,v] in Z(S), then ~A [u'] in (S') where S' and u' depend on u and v. It is not known whether there is such a constructive elimination theorem for
+arbitrary sets A of af. (Of course, nonstructively, we obtain such an elimination theorem for the
+full analytic comprehension axiom by taking S' to be a countable model of constructible sets.)
+For the sake of simplicity, I will consider only Z(SO) , where S 0 is an enumeration of the
+finitarypredicates; but the extension to arbitrary S is straightforward.
+A derivation in
+/XZA(Z), where A(P)
+z(s
+~(S O) is called strict if all its cut formulae are of the form X/ZA(Z) or
+is finitary. ~ A [u] will mean that there is a strict derivation of & in o)
+ofra~
+!u"
+IlI. If ~2_~u, v # 0 and FL~ [u,~ v] in Z(~0), then ~A [• in Y(~0).
+This follows from the proof of the Elimination Theorem for elementary analysis. For, the Elimination
+Lemma remains valid except for the case that the cut formula A or A is pt of an instance of Z 1 1 AC; and in that case it is of the required form.
+Let Po,PI,... be variables not occuring in the finitary predicate A(b,P). Set
+Cn(b ) = A(b,Pn) A k<n
+A A(b,Pk),
+H(b) = V k
+(Ck((b) 0) A Pk(b)l).
+________________
+234
+Then it is easy to verify that~ for each n and k, there are normal derivations of finite rank of
+So,
+(~---~ c + A(~,~).
+J-AVA(n,Pk) + AA(n,H n) [~ + 2].
+nk n
+Let S_< z and let K be the result of replacing each Pk in H by F k. Then K < z + w and
+k AVA(~,F nk k) +AA(~,~) n
+[2" z + ~ + 2].
+We call K the choice predicate for A(b,P) relative to S.
+Let S 0 be the finitary predicates; and for z > O, let ~z be the closure of the union of all
+the ~x with x < z and all choice predicates for finitary A(b,P) relative to lists S derived
+from some S x with x < z. S is derived from S if it is obtained by replacing all but a finite X
+number of predicate variables in each predicate in S by the constant Q. Here, Q is to be fixed,
+X
+once and for all. Note that a choice predicate relative to such a derived list is a predicate: It
+contains only a finite number of variables. For each z, we clearly have S Z -- <
+l+z
+IV. I ff A i__ss Z 1 i
+and ~A [u], then hA [xl+U(0)] in (~u).
+The proof is by induction on u. When the last step in the strict derivation of A is by A, ~,~
+or 5, the result immediately follows from the induction hypothesis, since xU(o) is strictly
+increasing in u. The last step is not by ~ since & is Z I. i
+So, we need only consider the cases ~i I AC and C. Let the last step be by Z i
+I AC, so that A is of the form P +VZ/kA(~,Z n) and
+n ~P +AVZA(n,Z)[v] for some v<u. Bythe ind. hyp., ~P +AVZA(n,E)[• in (~v).
+n n Since there are no instances of ~ in this latter derivation, it easily follows that F P+AVA(n,F n k k) [xl+v(0)]
+in (Sv), where S v = (Fo'FI''" v v
+")" Let S = (Fo,F1,...) be the list
+derived from S V
+by replacing each variable which does not occur in A by Q. Then,
+P + AVA(n,Fk) [XI+V(O)]
+nk
+choice predicate for A(b,P)
+A(~,P k) + V Cm(~),
+m
+in (~v), by substitution throughtout the derivation. Let K be the
+relative to S.
+Then ~/~k/A(n,F~) +/~A(n,K n) [w l+v + ~ + 2]. So by nk A ~
+n
+________________
+255
+~, ~ r +AA(~,K u) [x,y], where x < xl+U(0) and Y = l+v + 2, in (~v)- So by the Elimination
+n Theorem for (~v), F F +AA(~,K n) [z] in (~v), where z ~ X0(X0(xl+V(xl+V(2 9 wl+v + x)))) < ~+~0).
+n So by 3, ~ A [xl+u(0)] in (~u) since K is in the llst ~u" Finally, suppose that the last step
+is by ~. Then, since the derivation is strict, the last step has the form
+a
++
+VZA(Z) n
++
+AZA(Z)
+A
+By reduction and the inductive hypothesis, ~ d +VZA(Z) [xl+V(o)] and F A + ~ [• in
+(Sv) for some v < u. So by ~ and ~, ~d [x,k] in (Sv), with x = xl+V(O) + 2 and k < ~.
+Hence, by the Elimination Theorem for (Sv), ~ d [z] in (Sv) - and so, (Su) - where
+z _
+< s k l+v. ~ ~
+l+v
++x)
+< •
+q.e .d.
+EXAMPLE. Let E be pure second order Peano arithmetic with ~i i
+A~C and the arithmetic compre-
+hension axiom
+P + A(F) r + VZA(Z)
+added (where A(P) contains no predicate quantifiers). Of course, in Z 1
+I A~C, /~ should be inter-
+n preted as /kx and A(b,P) is a formula of (first order) Peano arithmetic. Suppose that all the
+predicate quantifiers in A are existential and ~ A in ~. Then ~ A [u,v] in Z(SO), with
+u < ~ and v < ~. Then by III, ~ [x] with x < E O. So, ~A [xX(o)] in Sx, by IV. Since
+the principle of induction e(n) is El:
+1
+E
+• 0(0) is a bound on the provable ordinals of ~.
+This result is proved by H. Friedman in his dissertation (Subsystems of set theor~ and analysis, M.I.T.)
+by a translation of % into ramified analysis. Theorem (6.19) of Feferman [2] seems to show that
+the bound x-O(o) is optimal.
+________________
+236
+REFERENCES
+[i] Barwise, J., Infinitary logic and admissible sets, J. Symbolic Logic, to appear.
+[2] Feferman, S., Systems of predicative analysis, Journal of Symbolic Lo6ic ~ vol. 29 (1964), pp. 1-30.
+[3] Gentzen, G., Untersuchungen ~er d~s logische Schlussen, Mathematische Zeitschrift, vol. 39 (1935),
+pp. 176-221.
+[4] , Die Widerspruchspreiheit der reinen Zahlentheorie, Mathematische Annalen~ vol. lle
+(1936), pp. 493-565.
+[5] , Beweisbarkeit und Unbeweisbarkeit von Anfangsfa'llen der transfiniten Induktion in der
+reinen Zahlentheorie, Mathematische Annalen r vol. 119 (1943), pp. 140-161.
+[6] Karl0, C. R., Languages with expressions of infinite length, Amsterdam, 1964.
+[7] Lopez-Escobar, E. G. K., An interpolation theorem for denumerably long formulas, Fundamenta
+Mathematicae, LVII (1965).
+[8] Lorenzen, P., Algebraische und logistische Untersuchungen ~oer freie Verb~'nde, Journal of Symbolic
+Logic, vol. 16 (1951), pp. 81-106.
+[9] Schutte, K., Beweistheoretische Erfassung der unendlichen Induktion in der Zahlentheorie,
+Mathematisehe Annalen, vol. 122, (1955), pp. 369-389.
+[i0] , Kennzeichnung yon Ordnungszahlen durch rekursiv erklA'rte Funktionen, Mathematische
+Annalen, vol. 127, (1954), pp. 15-32.
+[ii] , Beweistheorie, Berlin, Gottingen, Heidelberg, 1960.
+[12] , Predicative well-orderings, Formal Systems and Recursive Functions, Amsterdam 1965,
+pp. 280-503.
+[13] , Eine Grenze ~ die Beweisbarkeit der transfiniten Induktion in der verzweigten
+Typenlogic, _Archly fur Mathematisehe Lo~ik und Grundla~enferschung, vol. 7, Pp. 45-60.
+[14] Tait, W. W., Cut elimination in infinite propositional logic (Abstract), Journal of S~mbolic
+Logic, vol. 31, (1966), p. 151.
+UNIVERSITY OF ILLINOIS, CHICAGO CIRCLE

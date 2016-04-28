@@ -1,0 +1,116 @@
+\documentclass{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{lemma}
+
+%% Utilde
+\def\utilde#1{\mathord{\vtop{\ialign{##\crcr
+$\hfil\displaystyle{#1}\hfil$\crcr\noalign{\kern1.5pt\nointerlineskip}
+$\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
+
+\begin{document}
+\author{W.W. Tait \footnote{This work has been partially supported by a NSF Grant GP-7640. The first draft of this paper was written while the author was an associate member of the Illinois Center for Advanced Study}}
+\title{Normal Derivability in Classical Logic}
+
+\maketitle
+
+The main result in this paper, the Elimination Theorem below, is a generalization of Gentzen's Hauptsatz \cite{gentzenTransfInd} for finitary predicate logic to the logic of infinitary propositions, that is, propositions involving infinite disjunctions and conjunctions. For the sake of simplicity, I will discuss only classical logic; but the extension to intuitionistic logic is a routine matter. Of course, predicate logic already involves infinitary propositions in the form of quantifieations. But these are of just one, particularly simple, kind of infinitary proposition; and there are others which also occur naturally. For example, arithmetical propositions and propositions of ramified type theory are built up from equations between numerical terms by means of countable disjunctions and conjunctions. Moreover, many of the results in the literature on these special kinds of infinitary proposition are simply instances of general theorems about infinitary logic - and are best understood in this way. Of course, this does not apply to those results about formal systems which depend on their combinatorial properties.
+
+Although we will be dealing with infinitary propositions and infinite derivations of them, we will deal with these constructively - not, of course, in the narrow sense of Hilbert's finitism, but in the wider sense which admits (potential) infinities, in the form of rules of construction, as objects. As a consequence of this, we will obtain a constructive foundation for infinitary classical logic and for those parts of mathematics contained in it. Specifically, the Elimination Theorem will show constructively that the propositions with ``cut-free'' derivations are closed under the usual laws of classical logic. Also, the elementary propositions (atoms) with cut-free derivations are precisely the axioms. Hence, by replacing the intended interpretation \lq A is true \rq of the proposition \lq A has a cut-free derivation \rq, a constructive foundation is obtained. A more technical point - of which I will not make anything in this paper - is that the constructive arguments are easily formalized in quantifier-free formal systems, the strength of which can readily be determined. This leads to a comparison of strength among those formal axiomatic theories which can be regarded as fragments of infinitary logic, and in particular, to consistency proofs for these theories relative to one another. We will discuss a less delicate comparison of these theories, which involves finding a bound for the ``provable ordinals'' (i.e., the ordinals of decidable well orderings for which induction can be proved) in them. This does not require formalizing the proof of the Elimination Theorem; but also, it does not serve to distinguish consistency problems: of two theories with the same least bound on provable ordinals, the consistency of one may be a theorem of the other. This is because the provable ordinals are not changed when true purely universal propositions with decidable matrices (such as consistency statements) are added to the axioms. Nonconstructively, this applies to a much wider class of propositions, e.g., true arithmetical propositions.
+
+The results on provable ordinals need a sharper form of the Elimination Theorem than Gentzen stated for finitary predicate logic. Gentzen's formulation is that every derivation can be transformed into a \emph{cut-free} or \emph{normal} derivation of the same result. We need, in addition, a bound on the (in general, transfinite) length of the normal derivation in terms of the length of the given derivation and the logical complexity (also transfinite, in general) of the cut formulae in it. Of course, in finitary logic, the derivations and propositions (even with quantifiers) are of finite length and complexity, resp.; and so the sharper formulation of the theorem does not add all that much. Besides the Elimination Theorem, we will also need the \emph{Induction Theorem} below, which again is proved in the general setting of infinitary logic. It gives a bound on the ordinal of a decidable well-ordering in terms of the length of any normal derivation of the principle of induction on that ordering.
+
+The Elimination and Induction Theorems have their origins in Gentzen's papers \cite{gentzenCons} and \cite{gentzenTransfInd} on number theory, and more directly, in Sch\"utte's work \cite{schutte}, \cite{schutteBeweis}, and \cite{schutteBeweisbarkeit} on number theory and ramified type theory. A constructive proof of the Elimination Theorem without ordinal bounds was given by Lorenzen \cite{lorenzen} for ramified type theory.
+
+The results of this paper were reported in \cite{tait}, with a slightly different formulation of the system of infinitary propositional logic.
+
+
+\section{Paragraph 1}
+The \emph{propositional formulae}, or pf for short, are built up from \emph{atoms} by means of the possibly infinitary operations
+\[\bigvee\limits_{i\in I} A_i \quad \bigwedge\limits_{i\in I} A_i \]
+
+of disjunction and conjunction, resp. Here I is a constructive species, and for each $i$ in $I$, $A_i$ is a pf already obtained. The definition should be understood constructively: $\vee A_i$ is given by $\vee$, $I$ and a function (i.e., rule) which associates the disjunct $A_i$ with each $i$ in $I$. Similarly for conjunction. We could take the species of pf to be the species which is inductively defined by the above conditions. I leave open the question in this paper of the species $I$ for which this inductive definition of the species of pf can be constructively justifed. In the particular applications discussed here, $I$ is always of the form $\{i:i\leq z\}$, where $z \leq \omega$; and in this case, the definition is no more problematical than Brouwer's definition of the second number class, since they are formally identical. However, it seems to me that undecidable species $I$ can be introduced as well. But I will discuss this in another paper, in which such applications will be considered. In any case, for many applications, we want the pf to constitute, not the entire species which is inductively defined by the above conditions, but some subspecies of this. Such a subspecies is called complete if it contains each atom and, whenever it contains one of $\vee A_i$ and $\wedge A_i$, it contains both of them and the components $A_i$ for each $i \in I$. Of course, the inductively defined species is itself complete.
+
+Henceforth, the pf will all be assumed to belong to some fixed complete species. To call $A$ a pf will mean that it belongs to this species.
+
+Negation is not taken as a primitive operation, because for the purposes of this paper, it is more convenient to deal with it as follows: assume that each atom $p$ has associated with it an atom $\bar p$, called its \emph{complement}; and that conversely, $p$ is the complement of $\bar p$, i.e., $\bar{\bar p} = p$. The complement $\bar A$ of an arbitrary pf $A$ is inductively defined by De Morgan's laws:
+\[ \overline{\vee A_i} = \wedge \bar{A_i} \quad \overline{\wedge A_i} = \vee \bar{A_i}\]
+
+The negation of $A$ will be identified with $\bar A$, with the advantage for us here that the classical law of double negation becomes the syntactical identity $\bar{\bar A} = A$. Note that, by completeness, $\bar A$ is a pf when $A$ is.
+
+Quantification is not introduced as primitive, either. This is because, without any loss, it can be dealt with in terms of infinite disjunctions and conjunctions. We will take this point up below.
+
+In order to make the structure of derivations as simple as possible, the objects to be derived are taken to be finite sets $\Gamma, \Delta$ etc., of pf, rather than single pf. These sets are interpreted disjunctively, so that $[A_0,\dots,A_{n-1}]$ is valid just in case $\vee_{i<n} A_i$ is. $\Gamma + \Delta$ will denote the union of $\Gamma$ and $\Delta$, $\Gamma + A$ will denote $\Gamma + \{A\}$; and sometimes, $A$ will denote $\{A\}$.
+
+Let $S$ be a collection of finite sets of atoms with the
+
+\begin{definition}[Intersection property]
+  If $\Gamma + p$ and $\Delta + \bar p$ are in $S$, then so is some subset of $\Gamma + \Delta$.
+\end{definition}
+
+$S$ will be called an \emph{axiom system}, and its elements \emph{axioms}. For example, the axiom system might consist of all true propositional constants (including the complements of false ones) together with the sets $p + \bar p$ for each propositional variable $p$. But, it will be useful, e.g., in treating predicate logic with identity below, to consider the more general kind of axiom system.
+
+Relative to the choice of an axiom system, the normal rules of inference are the \emph{rule of axioms}
+
+\[\utilde{A} \quad \Gamma + \Delta \quad \text{(if $\Delta$ is an axiom)} \]
+the \emph{rule of disjunction}
+
+\[\utilde{\vee} \quad \frac{\Gamma + A_j}{\Gamma + \vee A_i} \quad \text{(some $j$ in $I$)} \]
+\[\utilde{\wedge} \quad \frac{\Gamma + A_j}{\Gamma + \wedge A_i} \quad \text{(all $j$ in $I$)} \]
+
+Besides these normal rules, there is the \emph{cut rule}
+\[\utilde{C} \quad \frac{\Gamma+A \quad \Gamma + \bar{A}}{\Gamma}\]
+
+Rule $\utilde{A}$ has no premises, $\utilde{\vee}$ has one, $\utilde{C}$ has two, and $\utilde{\wedge}$ has one corresponding to each $j$ in $I$ - and so may have infinitely many premises.
+The atoms in $\Delta$ are called the \emph{principle terms} (pt) of A. $\vee A_i$ and $\wedge A_i$ are the pt of $\utilde{\vee}$ and $\utilde{\wedge}$, resp. $\utilde{C}$ has no pt. Aj is called the \emph{minor} term (mt) of the premise of $\utilde{\vee}$  $A_j$ is the mt of the premise $\Gamma + A_j$ of $\utilde{\wedge}$ ; and A and $\bar A$ are the mt of the premises $\Gamma + A$ and $\Gamma + \bar A$ of $\utilde{C}$, resp. Thus let the pf $B_j$ for $j$ in $J$, be the mt of some inference and $\Delta$ the set of pt. Then for each $\Gamma$,
+\[\tag{*} \frac{\Gamma + B_j}{\Gamma + \Delta} \quad \text{(all $j$ in $J$)} \]
+
+is an inference; and every inference is of this form. We will regard the inference $(*)$ as given by the mt $B_j$ ($j$ in $J$), the pt $\Delta$ and the set $\Gamma$ whose elements will be called the \emph{side terms} (st) of the inference. Note that in every case but $\utilde{A}$ the st are determined by being the only pf occurring in all the premises and in the conclusion.In the case of $\utilde{A}$, any set $\Lambda$ such that $\Gamma \subseteq \Lambda \subseteq \Gamma + \Delta$ can be the set of st of an instance of $A$ with conclusion $\Gamma + \Delta$ (providing that $\Delta$ is an axiom).
+
+\emph{Derivations} are given in (possibly infinite) tree form. Thus, if (*) is an inference, and $D_j$ is a derivation of the premise $\Gamma + B_j$ for each $j$ in $J$, then
+\[\frac{D_j}{\Gamma + \Delta} \quad \text{(all $j$ in $J$)} \]
+
+is a derivation of $\Gamma + \Delta$. (*) is called the \emph{last inference} of the derivation, and the $D_j$ its \emph{direct subderivations}. The instances of $\utilde{A}$ are derivations, and all other derivations are built up from these using the remaining rules of inference. $D \vdash \Delta$ will mean that $D$ is a derivation of $\Delta$, and $\vdash Delta$ will mean that there is a derivation of $\Delta$.
+The species of derivations is thus inductively defined, relative to the species of pf. We have relativized the notion of pf from the full inductively defined species to some suitable (i.e. complete) subspecies. It is also possible to do this for the notion of a derivation. In this case, to see what a "suitable" subspecies would be, we would have to analyze the closure conditions on the notion of a derivation which suffice for the proof of the Elimination Theorem to go through. For a classical treatment of infinitary logic, this has recently been done by Barwise \cite{barwise}: both the pf and the derivations are relativized to some admissible set. (This includes the condition of completeness for the set of pf.) But, so far, no constructively meaningful treatment of this problem has been given.
+
+A derivation is called \emph{normal} if it involves only normal inferences, i.e., if it contains no cuts. In a normal inference, every pf which occurs in a premise is a part, or subformula, of a pf in the conclusion. It follows from this, for example, that if a set of atoms has a normal derivation, then some subset of it must be an axiom. The Elimination Theorem states in part that every derivable set has a normal derivation. An immediate consequence is the
+
+\begin{theorem}[Consistency Theorem]
+Every derivable set of atoms includes an axiom.
+\end{theorem}
+ConsistencY in the usual sense means that not every set is derivable. But by the Consistency Theorem, this is equivalent to the condition that the null set is not an axiom. The statement of the Consistency Theorem is not itself significant, of course. Nonconstructively, it is a triviality. The significance lies in the fact that it is proved constructively.
+
+\emph{A digression.} By a \emph{valuation}, I will mean a set of atoms which contains at least one element of each axiom and at most one of $p$ and $\bar p$ for each atom $p$. Each atom in a valuation will be called \emph{true} for it. $\vee A_i$ ($\wedge A_i$) will be called true for a valuation if $A_j$ is true for some (all) $j$ in $I$. $\Delta$ is \emph{valid} if, for each valuation, some pf in $\Delta$ is true. A pf is called \emph{countable} if it contains only countable disjunctions and conjunctions.
+\begin{theorem}[Completeness Theorem]
+  If a finite set of countable pf is valid, it has a normal derivation.
+\end{theorem}
+
+I will omit the proof of this. (See Lopez-Escobar \cite{lopez}.) It is in complete analogy with the proof of completeness of the cut-free rules for predicate logic (which it implies). The main lemma needed is this:
+\begin{lemma}
+  If $M$ is a (possibly infinite) set of atoms which intersects each
+  valuation, then it includes an axiom
+\end{lemma}
+
+The Completeness Theorem is formulated in slightly greater generality than usual, because normally it is stated only for logically complete axiom systems, i .e., systems in which some subset of $p + \bar p$ is an axiom for each atom $p$. For logically complete systems, a valuation contains exactly one of $p$ and $\bar p$ for each atom $p$; and so, the definition of truth is the usual one for classical logic. We have not assumed logical completeness in the definition of an axiom system, simply because it is not needed for the Elimination Theorem. (It also turns out that the Intersection Property is exactly what is needed to prove the above lemma).
+
+The restriction to countable pf in the Completeness Theorem is known to be essential. (E.g. see Karp \cite{karp}). A particularly simple proof of this is possible using the present formulation of infinitary logic. Let the atoms be $p_0^0, p_1^0, p_2^0, \dots$ and their complements $p_0^1, p_1^1, p_2^1, \dots$ resp. The axioms are just the sets $p_n^0 + p_n^1$ for $n \geq 0$ (this is the weakest logically complete system). If $f$ ranges over the uncountable set $2^N$ of numerical functions with values $<2$, then
+
+\[ \vee_f \wedge_n p_n^{f(n)} \]
+
+is valid. Suppose that it had a normal derivation $D$. Because of the subformula property of normal derivations, the only conjunctions occurring in $D$ must be of the form $\wedge p_n^{\theta(n)}$, where $\theta$ is some function in $2^N$. Hence, in every instance of rule $\utilde{\wedge}$ - and so, of any rule - there are only a countable number of premises. It follows that $D$ can contain only a countable number of pf. In particular, there are only a countable number of $\theta$, say $\theta_0,\theta_1,\dots$ such that an inference of the form
+
+\[\frac{\Gamma + \wedge p_n^{\theta(n)}}{\Gamma + \vee_f \wedge p_n^{f(n)}} \]
+
+occurs in $D$. Consequently, $D$ would remain a correct derivation if $f$ in (*) were restricted to range over $\theta_0,\theta_1,\dots$. But, so modified, (*) is invalid. Therefore, there is no normal derivation of (*), and so, by the Elimination Theorem, no derivation at all.
+
+A similar argument demonstrates the (known) nonderivability of the axiom of choice
+\[ \vee_m\wedge_n \bar p_{mn} + \vee_g \wedge_m p_{mg(n)} \]
+where $g$ ranges over $N^N$ and the axioms are $p_{mn} + \bar p_{mn}$ for each $m$ and $n$. Again, the crucial point is that the conjunctions are all countable, while $g$ cannot be restricted to a countable range.
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{references} 
+\end{document}
